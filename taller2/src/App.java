@@ -19,19 +19,33 @@ class Auto{
     int precio;
     String marca;
     Motor motor;
-    static int registro;
+    int registro;
+    Asiento asiento;
     int cantidadCreados;
-    Asiento[] asientos = new Asiento[4];
+    Asiento[] asientos;
     int x = 0;
 
     public int cantidadAsientos(){
-        return  this.asientos.length;
+        int cantidadSillas = 0;
+        for(int g = 0; g<=asientos.length;g++){
+            if(asientos[g] instanceof Object){
+                cantidadSillas++;
+            }
+        }
+        return cantidadSillas;
     }
     public String verificarIntegridad(){
         String y = "";
-        if(Motor.registro==this.registro){
-            if(this.registro==Asiento.registro){
-                y = "Auto original";
+        if(this.motor.registro==this.registro){
+            for(int i = 0; i<=asientos.length ; i++){
+                if(asientos[i]!=null){
+                    if (asientos[i].registro==this.registro) {
+                        y = "Auto original";
+                    }
+                    else{
+                        y = "Las piezas no son originales";
+                    }
+                }
             }
         }
         else{
@@ -47,7 +61,7 @@ class Auto{
 class Asiento{
     String color;
     int precio;
-    static int registro;
+    int registro;
     
     
     void cambiarColor(String color){
