@@ -1,6 +1,6 @@
 package test;
 public class Motor {
-    int numeroDeCilindros;
+    int numeroCilindros;
     String tipo;
     int registro;
 
