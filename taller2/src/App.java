@@ -1,3 +1,5 @@
+package test;
+
 class Motor{
     int numeroDeCilindros;
     String tipo;
@@ -25,8 +27,18 @@ class Auto{
     public int cantidadAsientos(){
         return  this.asientos.length;
     }
-    public int verificarIntegridad(){
-        return Motor.registro;
+    public String verificarIntegridad(){
+        String y = "";
+        if(Motor.registro==this.registro){
+            if(this.registro==Asiento.registro){
+                y = "Auto original";
+            }
+        }
+        else{
+            y = "Las piezas no son originales";
+        }
+
+        return y;
     }
 
 
@@ -39,27 +51,19 @@ class Asiento{
     
     
     void cambiarColor(String color){
-        this.color = color;
+
+        if(color=="rojo" || color=="verde" || color=="amarillo" || color=="negro" || color=="blanco"){
+            this.color = color;
+        }
+        
     }
+
 
 }
 
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Auto carro = new Auto();
-        Asiento silla1 = new Asiento();
-        Asiento silla2 = new Asiento();
-        Asiento silla3 = new Asiento();
-        Asiento silla4 = new Asiento();
-        silla1.color = "Rojo";
-        carro.asientos[0] = silla1;
-        carro.asientos[1] = silla2;
-        carro.asientos[2] = silla3;
-        carro.asientos[3] = silla4;
-        System.out.println(carro.verificarIntegridad());
-
-
-
+        
     }
 }
