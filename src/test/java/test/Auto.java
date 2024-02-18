@@ -1,21 +1,6 @@
 package test;
-
-class Motor{
-    int numeroDeCilindros;
-    String tipo;
-    static int registro = 1;
-
-    void cambiarRegistro(int registro){
-        this.registro = registro;
-    }
-    void asignarTipo(String tipo){
-        this.tipo = tipo;
-    }
-}
-
-
-class Auto{
-    String modelo;
+public class Auto {
+	String modelo;
     int precio;
     String marca;
     Motor motor;
@@ -56,28 +41,4 @@ class Auto{
     }
 
 
-}
-// clase asiento con metodo cambiar color
-class Asiento{
-    String color;
-    int precio;
-    int registro;
-    
-    
-    void cambiarColor(String color){
-
-        if(color=="rojo" || color=="verde" || color=="amarillo" || color=="negro" || color=="blanco"){
-            this.color = color;
-        }
-        
-    }
-
-
-}
-
-
-public class App {
-    public static void main(String[] args) throws Exception {
-        
-    }
 }
